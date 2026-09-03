@@ -1,12 +1,169 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inicio</title>
-    <link rel="stylesheet" href="./css/style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Equipo DevStudio · TP1 Front End</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
-    
+  <!-- Header de Navegación -->
+  <header class="site-header">
+      <div class="container header-nav">
+        <a href="index.html" class="brand-link" aria-label="Página principal de DevStudio">
+          <img src="img/logo-devstudio.svg" alt="Logo de DevStudio" class="brand-logo" width="36" height="36" />
+          <span class="brand-title">DevStudio</span>
+        </a>
+        <nav aria-label="Navegación principal">
+          <ul class="nav-links">
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="index.html#equipo">Equipo</a></li>
+            <li><a href="index.html#contacto">Contacto</a></li>
+            <li><a href="bitacora.html">Bitácora</a></li>
+            <li>
+              <button class="theme-toggle-btn" id="theme-toggle" aria-label="Cambiar modo claro u oscuro">🌙</button>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+  <main class="container">
+    <!-- Sección Inicio: Hero / Propósito del equipo -->
+    <section id="inicio" class="hero-screen">
+      <div class="hero-box">
+        <h1>Equipo DevStudio</h1>
+        <p class="hero-description">
+          Equipo colaborativo de desarrollo web enfocado en la creación de interfaces digitales modernas, estructuradas semánticamente y con total adaptabilidad responsiva.
+        </p>
+        
+        <!-- Interacción dinámica JS -->
+        <div id="hero-interactive">
+          <button id="btn-team-fact" class="btn-primary">Ver dato del equipo</button>
+          <p id="team-fact-output" class="interactive-output"></p>
+        </div>
+
+        <!-- Acceso directo al equipo -->
+        <a href="#equipo" class="scroll-down-link" aria-label="Desplazarse a integrantes">
+          <span>Conocé al equipo</span>
+          <span class="scroll-arrow">↓</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- Listado de Integrantes -->
+    <section id="equipo">
+      <h2 class="section-title">Integrantes del Equipo</h2>
+      <div class="team-grid">
+        
+        <!-- Tarjeta 1: Adriana -->
+        <article class="member-card">
+          <img src="img/avatar-adriana.jpeg" alt="Avatar de Adriana Meyniel" class="member-avatar" width="100" height="100" />
+          <h3>Adriana Meyniel</h3>
+          <p class="member-role">Buenos Aires · Analista Funcional</p>
+          <a href="perfil-adriana.html" class="btn-nav card-link">Ver Perfil →</a>
+        </article>
+
+        <!-- Tarjeta 2: Elías -->
+        <article class="member-card">
+          <img src="img/avatar-elias.png" alt="Avatar de Elías" class="member-avatar" width="100" height="100" />
+          <h3>Elías</h3>
+          <p class="member-role">Buenos Aires · Desarrollador</p>
+          <a href="perfil-elias.html" class="btn-nav card-link">Ver Perfil →</a>
+        </article>
+
+        <!-- Tarjeta 3: Judith -->
+        <article class="member-card">
+          <img src="img/avatar-judith.png" alt="Avatar de Judith" class="member-avatar" width="100" height="100" />
+          <h3>Judith</h3>
+          <p class="member-role">Buenos Aires · Desarrolladora</p>
+          <a href="perfil-judith.html" class="btn-nav card-link">Ver Perfil →</a>
+        </article>
+
+        <!-- Tarjeta 4: Magalí -->
+        <article class="member-card">
+          <img src="img/avatar-magali.png" alt="Avatar de Magalí" class="member-avatar" width="100" height="100" />
+          <h3>Magalí</h3>
+          <p class="member-role">Buenos Aires · Desarrolladora</p>
+          <a href="perfil-magali.html" class="btn-nav card-link">Ver Perfil →</a>
+        </article>
+
+        <!-- Tarjeta 5: Silvia -->
+        <article class="member-card">
+          <img src="img/avatar-silvia.png" alt="Avatar de Silvia" class="member-avatar" width="100" height="100" />
+          <h3>Silvia</h3>
+          <p class="member-role">Buenos Aires · Desarrolladora</p>
+          <a href="perfil-silvia.html" class="btn-nav card-link">Ver Perfil →</a>
+        </article>
+
+      </div>
+    </section>
+
+
+    <!-- Sección Contacto -->
+    <section id="contacto" class="container contact-section">
+      <h2 class="section-title">Contacto</h2>
+
+      <div class="contact-grid">
+        <!-- Columna 1: Formulario -->
+        <div class="card-box contact-card">
+          <h3 class="contact-card-title">¿Tenés alguna consulta o propuesta? Dejanos tu mensaje</h3>
+          
+          <form class="contact-form" action="#" method="post">
+            <div class="form-group">
+              <label for="nombre">Nombre</label>
+              <input type="text" id="nombre" name="nombre" placeholder="Tu nombre completo" required />
+            </div>
+
+            <div class="form-group">
+              <label for="email">Correo electrónico</label>
+              <input type="email" id="email" name="email" placeholder="tunombre@ejemplo.com" required />
+            </div>
+
+            <div class="form-group">
+              <label for="mensaje">Escribe tu mensaje aquí</label>
+              <textarea id="mensaje" name="mensaje" rows="5" placeholder="¿Cómo podemos ayudarte?" required></textarea>
+            </div>
+
+            <button type="submit" class="btn-primary btn-submit">Enviar mensaje</button>
+          </form>
+        </div>
+
+        <!-- Columna 2: Mapa, Dirección y WhatsApp -->
+        <div class="card-box contact-card contact-info-card">
+          <h3 class="contact-card-title">Encontranos</h3>
+          <p class="contact-address">Av. Corrientes 1234, CABA, Argentina</p>
+
+          <!-- Mapa interactivo de OpenStreetMap -->
+          <div class="map-container">
+            <iframe 
+              title="Ubicación DevStudio"
+              src="https://www.openstreetmap.org/export/embed.html?bbox=-58.3850%2C-34.6060%2C-58.3810%2C-34.6020&layer=mapnik&marker=-34.6037%2C-58.3830"
+              loading="lazy">
+            </iframe>
+          </div>
+
+          <!-- Enlace directo con ícono a WhatsApp -->
+          <a href="https://wa.me/5491100000000" target="_blank" rel="noopener noreferrer" class="whatsapp-link">
+            <svg class="whatsapp-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" width="22" height="22">
+              <path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2m.01 1.67c2.2 0 4.26.86 5.82 2.42a8.225 8.225 0 0 1 2.41 5.83c0 4.54-3.7 8.24-8.24 8.24-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.196 8.196 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24m4.52 11.66c-.25-.13-1.47-.72-1.7-.81-.23-.08-.39-.13-.56.13-.17.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.13-1.06-.39-2.02-1.25-.75-.67-1.26-1.5-1.41-1.75-.15-.25-.02-.39.11-.51.11-.11.25-.29.37-.44.13-.15.17-.25.25-.42.08-.17.04-.31-.02-.44-.06-.13-.56-1.34-.76-1.84-.2-.49-.4-.42-.56-.43h-.48c-.17 0-.44.06-.67.31-.23.25-.88.86-.88 2.1s.9 2.44 1.03 2.61c.13.17 1.77 2.7 4.29 3.79.6.26 1.07.41 1.44.53.6.19 1.15.16 1.58.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.15-1.18-.06-.11-.23-.17-.48-.3"/>
+            </svg>
+            <span>Chatear por WhatsApp</span>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© 2026 DevStudio · Todos los derechos reservados</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
 </body>
 </html>

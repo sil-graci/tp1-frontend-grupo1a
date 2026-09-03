@@ -23,27 +23,37 @@ function initThemeToggle() {
 }
 
 // ==========================================================================
-// Interacción Dinámica de la Portada
+// Interacciones Dinámicas Centralizadas para los Perfiles
 // ==========================================================================
 document.addEventListener("DOMContentLoaded", () => {
   // Inicializar modo oscuro/claro
   initThemeToggle();
+  const actionBtn = document.querySelector(".btn-perfil-action");
+  const output = document.querySelector(".perfil-output");
 
-  const factBtn = document.getElementById("btn-team-fact");
-  const factOutput = document.getElementById("team-fact-output");
+  if (actionBtn && output) {
+    const member = actionBtn.getAttribute("data-member");
 
-  const teamFacts = [
-    "💡 El equipo combina experiencia en UX/UI, análisis de datos y maquetación web moderna.",
-    "🚀 La estructura está optimizada para 400px, 900px y 1200px sin desbordes laterales.",
-    "🎯 La navegación interna es 100% circular e intuitiva sin depender del historial del navegador.",
-    "⚡ Usamos CSS Grid y Flexbox combinados con variables nativas en :root.",
-    "🛠️ La lógica JavaScript está modularizada y centralizada en dos archivos sin duplicación."
-  ];
-
-  if (factBtn && factOutput) {
-    factBtn.addEventListener("click", () => {
-      const randomIndex = Math.floor(Math.random() * teamFacts.length);
-      factOutput.textContent = teamFacts[randomIndex];
+    actionBtn.addEventListener("click", () => {
+      switch (member) {
+        case "adriana":
+          output.textContent = `xxx`;
+          break;
+        case "elias":
+          output.textContent = "xxx.";
+          break;
+        case "judith":
+          output.textContent = "xx";
+          break;
+        case "magali":
+          output.textContent = "xx";
+          break;
+        case "silvia":
+          output.textContent = "xx";
+          break;
+        default:
+          output.textContent = "xx.";
+      }
     });
   }
 });

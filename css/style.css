@@ -1,0 +1,784 @@
+/* ==========================================================================
+   Tokens y Variables CSS: Modo Claro (Vibrante)
+   ========================================================================== */
+:root {
+  --bg-main: #e2e8f0;             /* Gris pizarra claro de fondo */
+  --bg-card: #ffffff;             /* Blanco sólido para tarjetas */
+  
+  /* Gradiente translúcido + imagen de fondo para Modo Claro */
+   --bg-hero: linear-gradient(135deg, #1d4ed8 0%, #4f46e5 50%, #7c3aed 100%); /* Gradiente Azul-Índigo-Violeta */
+  
+  --text-main: #0f172a;           /* Texto oscuro de alto contraste */
+  --text-muted: #475569;
+  
+  --accent: #2563eb;              /* Azul eléctrico */
+  --accent-hover: #1d4ed8;
+  --accent-subtle: #dbeafe;
+  --badge-color: #4338ca;
+  
+  --border-color: #cbd5e1;
+  --shadow-card: 0 4px 12px rgba(15, 23, 42, 0.08);
+  --shadow-hover: 0 12px 24px rgba(37, 99, 235, 0.18);
+  --radius: 14px;
+  
+  --font-title: 'Space Grotesk', sans-serif;
+  --font-body: 'IBM Plex Sans', system-ui, sans-serif;
+  --wrap-max: 1200px;
+}
+
+/* ==========================================================================
+   Tokens: Modo Oscuro (High Contrast Dark)
+   ========================================================================== */
+[data-theme="dark"] {
+  --bg-main: #090d16;             /* Fondo oscuro profundo */
+  --bg-card: #131b2e;             /* Tarjeta azul noche */
+  
+  /* Gradiente oscuro + imagen de fondo para Modo Oscuro */
+   --bg-hero: linear-gradient(135deg, #1e1b4b 0%, #312e81 50%, #4338ca 100%);
+  
+  --text-main: #f8fafc;           /* Blanco nítido */
+  --text-muted: #94a3b8;          /* Gris claro */
+  
+  --accent: #38bdf8;              /* Celeste brillante para iluminar */
+  --accent-hover: #0ea5e9;
+  --accent-subtle: rgba(56, 189, 248, 0.15);
+  --badge-color: #38bdf8;
+  
+  --border-color: #22304e;
+  --shadow-card: 0 4px 14px rgba(0, 0, 0, 0.4);
+  --shadow-hover: 0 12px 28px rgba(56, 189, 248, 0.18);
+}
+
+/* Base */
+* { 
+  box-sizing: border-box; 
+  margin: 0; 
+  padding: 0; 
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--bg-main);
+  color: var(--text-main);
+  line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.container {
+  width: 100%;
+  max-width: var(--wrap-max);
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* ==========================================================================
+   Header: Marca a la izquierda, Navegación a la derecha y Botón de Tema
+   ========================================================================== */
+.site-header {
+  background: var(--bg-card);
+  border-bottom: 1.5px solid var(--border-color);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.header-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 72px;
+}
+
+/* Marca (Logo + Título del equipo) */
+.brand-link {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  text-decoration: none;
+}
+
+.brand-logo {
+  width: 36px;
+  height: 36px;
+  display: block;
+  border-radius: 8px;
+}
+
+.brand-title {
+  font-family: var(--font-title);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-main);
+  transition: color 0.2s ease;
+}
+
+.brand-link:hover .brand-title {
+  color: var(--accent);
+}
+
+/* Enlaces de Navegación */
+.nav-links {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  gap: 1rem;
+}
+
+.nav-links a, .btn-nav {
+  text-decoration: none;
+  color: var(--text-main);
+  font-weight: 600;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+}
+
+.nav-links a:hover, .btn-nav:hover {
+  background-color: var(--accent-subtle);
+  color: var(--accent);
+}
+
+.nav-links a.active {
+  background-color: var(--accent);
+  color: #ffffff;
+}
+
+[data-theme="dark"] .nav-links a.active {
+  color: #090d16;
+}
+
+/* Botón de Modo Claro / Oscuro */
+.theme-toggle-btn {
+  background: var(--accent-subtle);
+  border: 1.5px solid var(--border-color);
+  color: var(--text-main);
+  font-size: 1.1rem;
+  cursor: pointer;
+  padding: 0.4rem 0.75rem;
+  border-radius: 999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.theme-toggle-btn:hover {
+  transform: scale(1.1);
+}
+
+/* ==========================================================================
+   Hero de Pantalla Completa con Imagen de Fondo y Título Fluido
+   ========================================================================== */
+.hero-screen {
+  min-height: calc(100vh - 72px); /* Llena la pantalla restando el header */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem 0 2rem;
+}
+
+section[id],
+.hero-box {
+  scroll-margin-top: 90px;
+}
+
+
+/* ==========================================================================
+   Hero Box: Modo Claro Luminoso & Modo Oscuro Profundo
+   ========================================================================== */
+
+.hero-box {
+  width: 100%;
+  min-height: calc(100vh - 120px);
+  padding: 4rem 2rem;
+  margin-top: 0;
+  text-align: center;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-card);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+
+  /* MODO CLARO: Viñeta sutil en bordes, centro libre para lucir los neones */
+  background-image: 
+linear-gradient(135deg, rgba(15, 23, 42, 0.45) 0%, rgba(30, 41, 59, 0.5) 100%),
+    url("../img/hero-bg.png");
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+ }
+
+/* MODO OSCURO: Imagen pura */
+[data-theme="dark"] .hero-box {
+  background-image: 
+    radial-gradient(circle at center, rgba(9, 13, 22, 0.1) 0%, rgba(9, 13, 22, 0.5) 100%),
+    url("../img/hero-bg.png");
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.hero-box h1 {
+  font-family: var(--font-title);
+  /* Crece fluidamente: mín 2.4rem en 400px, máx 4.2rem en 1200px+ */
+  font-size: clamp(2.4rem, 6vw, 4.2rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+  color: #ffffff;
+  margin-bottom: 1.25rem;
+  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.7), 0 1px 3px rgba(0, 0, 0, 0.9);
+  /* text-shadow: 0 4px 18px rgba(0, 0, 0, 0.3); */
+}
+
+.hero-description {
+  color: #e0f2fe;
+  max-width: 62ch;
+  margin: 0 auto 2rem;
+  font-size: clamp(1.05rem, 2vw, 1.25rem);
+  line-height: 1.6;
+  /* text-shadow: 0 2px 8px rgba(0, 0, 0, 0.25); */
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.7), 0 1px 2px rgba(0, 0, 0, 0.9);
+}
+
+
+/* Botón y texto interactivo */
+.btn-primary {
+  display: inline-block;
+  background-color: #ffffff;
+  color: #1d4ed8;
+  border: none;
+  border-radius: 8px;
+  padding: 0.85rem 1.75rem;
+  font-family: var(--font-body);
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+.interactive-output {
+  margin-top: 1.25rem;
+  font-weight: 600;
+  color: #fef08a; /* Amarillo suave para lectura clara sobre azul */
+  min-height: 1.5em;
+  font-size: 1rem;
+}
+
+/* Indicador simple de scroll hacia la grilla */
+.scroll-down-link {
+  margin-top: 2.5rem;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.35rem;
+  color: #e0f2fe;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 600;
+  transition: opacity 0.2s ease;
+}
+
+.scroll-down-link:hover {
+  opacity: 0.85;
+}
+
+.scroll-arrow {
+  font-size: 1.4rem;
+  animation: bounce 1.8s infinite ease-in-out;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(6px); }
+}
+
+/* ==========================================================================
+   Grilla del Equipo (Portada)
+   ========================================================================== */
+.section-title {
+  font-family: var(--font-title);
+  font-size: 1.6rem;
+  margin-top: 3rem;
+  margin-bottom: 1.5rem;
+  color: var(--text-main);
+  position: relative;
+  display: inline-block;
+}
+
+.section-title::after {
+  content: "";
+  position: absolute;
+  bottom: -6px;
+  left: 0;
+  width: 44px;
+  height: 4px;
+  background: var(--accent);
+  border-radius: 2px;
+}
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 4rem;
+}
+
+.member-card {
+  background: var(--bg-card);
+  border: 1.5px solid var(--border-color);
+  border-radius: var(--radius);
+  padding: 1.75rem 1.25rem;
+  text-align: center;
+  box-shadow: var(--shadow-card);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.85rem;
+  transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease, background-color 0.3s ease;
+}
+
+.member-card:hover {
+  transform: translateY(-6px);
+  border-color: var(--accent);
+  box-shadow: var(--shadow-hover);
+}
+
+.member-avatar {
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid var(--accent);
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.25);
+}
+
+.card-link {
+  display: inline-block;
+  margin-top: auto;
+  padding: 0.5rem 1.25rem;
+  border: 1.5px solid var(--accent);
+  border-radius: 8px;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--accent);
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.card-link:hover {
+  background-color: var(--accent);
+  color: #ffffff;
+}
+
+[data-theme="dark"] .card-link:hover {
+  color: #090d16;
+}
+
+/* ==========================================================================
+   Perfil Individual
+   ========================================================================== */
+.profile-layout {
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: 2rem;
+  margin: 2.5rem auto 4rem;
+}
+
+.profile-sidebar {
+  background: var(--bg-card);
+  border: 1.5px solid var(--border-color);
+  border-radius: var(--radius);
+  padding: 2rem;
+  text-align: center;
+  box-shadow: var(--shadow-card);
+  height: fit-content;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.profile-avatar-lg {
+  width: 140px;
+  height: 140px;
+  margin: 0 auto;
+}
+
+.profile-name {
+  font-family: var(--font-title);
+  font-size: 1.6rem;
+  margin-top: 1rem;
+}
+
+.profile-location {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  margin-bottom: 0.5rem;
+}
+
+.profile-action-wrapper {
+  margin-top: 1.5rem;
+  border-top: 1.5px solid var(--border-color);
+  padding-top: 1.5rem;
+}
+
+.profile-action-wrapper .btn-primary {
+  background: var(--accent);
+  color: #ffffff;
+  width: 100%;
+}
+
+[data-theme="dark"] .profile-action-wrapper .btn-primary {
+  color: #090d16;
+}
+
+.perfil-output {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--accent);
+  margin-top: 0.75rem;
+  min-height: 1.5em;
+}
+
+.card-box {
+  background: var(--bg-card);
+  border: 1.5px solid var(--border-color);
+  border-radius: var(--radius);
+  padding: 1.75rem;
+  box-shadow: var(--shadow-card);
+  margin-bottom: 1.75rem;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+
+
+.card-box h2 {
+  font-family: var(--font-title);
+  font-size: 1.3rem;
+  color: var(--text-main);
+  margin-bottom: 1rem;
+}
+
+.tag-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  list-style: none;
+}
+
+.tag-list li {
+  background: var(--accent-subtle);
+  color: var(--accent);
+  border: 1px solid var(--border-color);
+  padding: 0.4rem 0.85rem;
+  border-radius: 999px;
+  font-size: 0.88rem;
+  font-weight: 600;
+}
+
+/* ==========================================================================
+   Tarjetas Multimedia de Películas y Discos (Cards con Imagen)
+   ========================================================================== */
+.media-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+}
+
+.media-card {
+  display: flex;
+  flex-direction: column;
+  background: var(--bg-main);
+  border: 1.5px solid var(--border-color);
+  border-radius: 10px;
+  overflow: hidden;
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease, background-color 0.3s ease;
+}
+
+.media-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--accent);
+  box-shadow: var(--shadow-hover);
+}
+
+.media-card-img-wrapper {
+  width: 100%;
+  height: 180px;
+  background-color: #0f172a;
+  overflow: hidden;
+  position: relative;
+}
+
+.media-card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.media-card:hover .media-card-img {
+  transform: scale(1.06);
+}
+
+.media-card-body {
+  padding: 0.85rem 1rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.media-card-title {
+  font-family: var(--font-title);
+  font-size: 0.98rem;
+  font-weight: 700;
+  color: var(--text-main);
+  margin-bottom: 0.25rem;
+}
+
+.media-card-author {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin-bottom: 0.5rem;
+}
+
+.media-card-badge {
+  margin-top: auto;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--badge-color);
+}
+
+/* ==========================================================================
+   Paginación entre perfiles
+   ========================================================================== */
+.profile-pagination {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.pagination-btn {
+  border: 1.5px solid var(--border-color);
+  background: var(--bg-card);
+}
+
+.pagination-btn.btn-primary {
+  background: var(--accent);
+  color: #ffffff;
+  border-color: var(--accent);
+}
+
+[data-theme="dark"] .pagination-btn.btn-primary {
+  color: #090d16;
+}
+
+/* ==========================================================================
+   Sección de Contacto (2 Columnas)
+   ========================================================================== */
+
+#contacto {
+  scroll-margin-top: 90px;
+}
+.contact-section {
+  margin-bottom: 4rem;
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.75rem;
+  align-items: stretch;
+}
+
+.contact-card {
+  margin-bottom: 0; /* Anula el margin inferior genérico de card-box */
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-card-title {
+  font-family: var(--font-title);
+  font-size: 1.25rem;
+  color: var(--text-main);
+  margin-bottom: 1.25rem;
+  line-height: 1.35;
+}
+
+.contact-address {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  margin-bottom: 1rem;
+}
+
+/* Formulario */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  flex: 1;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.form-group label {
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--text-main);
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  border: 1.5px solid var(--border-color);
+  background-color: var(--bg-main);
+  color: var(--text-main);
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px var(--accent-subtle);
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 110px;
+}
+
+.btn-submit {
+  margin-top: auto;
+  align-self: flex-start;
+  background-color: var(--accent);
+  color: #ffffff;
+}
+
+[data-theme="dark"] .btn-submit {
+  color: #090d16;
+}
+
+/* Columna Mapa e Info */
+.contact-info-card {
+  justify-content: space-between;
+}
+
+.map-container {
+  width: 100%;
+  height: 230px;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1.5px solid var(--border-color);
+  margin-bottom: 1.25rem;
+}
+
+.map-container iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* Botón / Enlace WhatsApp */
+.whatsapp-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  background-color: #25d366;
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 0.95rem;
+  text-decoration: none;
+  padding: 0.75rem 1.25rem;
+  border-radius: 8px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+  box-shadow: 0 4px 12px rgba(37, 211, 102, 0.25);
+}
+
+.whatsapp-link:hover {
+  background-color: #1ebe5d;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(37, 211, 102, 0.35);
+}
+
+/* Responsive: pasar a 1 columna en pantallas chicas */
+@media (max-width: 900px) {
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+/* ==========================================================================
+   Footer & Breakpoints Obligatorios (400px, 900px, 1200px)
+   ========================================================================== */
+.site-footer {
+  margin-top: auto;
+  padding: 2rem 0;
+  text-align: center;
+  background: var(--bg-card);
+  border-top: 1.5px solid var(--border-color);
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+@media (max-width: 1200px) {
+  .container { max-width: 95%; }
+}
+
+@media (max-width: 900px) {
+  .profile-layout { grid-template-columns: 1fr; }
+  .team-grid { grid-template-columns: repeat(2, 1fr); }
+  .media-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 400px) {
+  .team-grid, .media-grid { grid-template-columns: 1fr; }
+  .header-nav {
+    flex-direction: column;
+    height: auto;
+    padding: 0.85rem 0;
+    gap: 0.75rem;
+  }
+
+  .nav-links {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.4rem;
+    width: 100%;
+  }
+
+  .nav-links a,
+  .btn-nav {
+    padding: 0.35rem 0.6rem;
+    font-size: 0.85rem;
+  }
+  .profile-pagination { flex-direction: column; }
+}

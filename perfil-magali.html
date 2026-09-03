@@ -1,12 +1,163 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Magalí</title>
-    <link rel="stylesheet" href="./css/style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Perfil · Magalí</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
-    
+  <header class="site-header">
+    <div class="container header-nav">
+      <a href="index.html" class="brand-link" aria-label="Página principal de DevStudio">
+        <img src="img/logo-devstudio.svg" alt="Logo de DevStudio" class="brand-logo" width="36" height="36" />
+        <span class="brand-title">DevStudio</span>
+      </a>
+      <nav aria-label="Navegación principal">
+        <ul class="nav-links">
+          <li><a href="index.html#inicio">Inicio</a></li>
+          <li><a href="index.html#equipo">Equipo</a></li>
+          <li><a href="index.html#contacto">Contacto</a></li>
+          <li><a href="bitacora.html">Bitácora</a></li>
+          <li>
+            <button class="theme-toggle-btn" id="theme-toggle" aria-label="Cambiar modo claro u oscuro">🌙</button>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container profile-layout">
+    <aside class="profile-sidebar">
+      <img src="img/avatar-magali.png" alt="Avatar de Magalí" class="member-avatar profile-avatar-lg" />
+      <h1 class="profile-name">Magalí</h1>
+      <p class="profile-location">Buenos Aires, Argentina</p>
+      <p class="profile-age"><strong>Edad:</strong> -- años</p>
+      
+      <!-- Interacción Dinámica unificad -->
+      <div class="profile-action-wrapper">
+        <button class="btn-perfil-action btn-primary" data-member="magali">Frase Destacada</button>
+        <p class="perfil-output"></p>
+      </div>
+    </aside>
+
+    <section class="profile-content">
+      <article class="card-box">
+        <h2>Habilidades Principales</h2>
+        <ul class="tag-list">
+          <li>CSS Animaciones & Transiciones</li>
+          <li>JavaScript ES6+</li>
+          <li>Trabajo en Equipo Ágil</li>
+          <li>Maquetación Accesible</li>
+        </ul>
+      </article>
+
+      
+      <!-- Películas Favoritas en Cards (Mínimo 3) -->
+      <article class="card-box">
+        <h2>Películas Favoritas</h2>
+        <div class="media-grid">
+          
+          <!-- Película 1 -->
+          <a href="https://www.imdb.com/title/tt0816692/" target="_blank" rel="noopener noreferrer" class="media-card" aria-label="Ver ficha de Interestelar">
+            <div class="media-card-img-wrapper">
+              <img src="img/interstellar.jpg" alt="Póster de Interestelar" class="media-card-img" />
+            </div>
+            <div class="media-card-body">
+              <h3 class="media-card-title">Interestelar</h3>
+              <p class="media-card-author">Christopher Nolan (2014)</p>
+              <span class="media-card-badge">Ver en IMDb ↗</span>
+            </div>
+          </a>
+
+          <!-- Película 2 -->
+          <a href="https://www.imdb.com/title/tt1375666/" target="_blank" rel="noopener noreferrer" class="media-card" aria-label="Ver ficha de Inception">
+            <div class="media-card-img-wrapper">
+              <img src="img/inception.jpg" alt="Póster de Inception" class="media-card-img" />
+            </div>
+            <div class="media-card-body">
+              <h3 class="media-card-title">Inception</h3>
+              <p class="media-card-author">Christopher Nolan (2010)</p>
+              <span class="media-card-badge">Ver en IMDb ↗</span>
+            </div>
+          </a>
+
+          <!-- Película 3 -->
+          <a href="https://www.imdb.com/title/tt0133093/" target="_blank" rel="noopener noreferrer" class="media-card" aria-label="Ver ficha de Matrix">
+            <div class="media-card-img-wrapper">
+              <img src="img/matrix.jpg" alt="Póster de Matrix" class="media-card-img" />
+            </div>
+            <div class="media-card-body">
+              <h3 class="media-card-title">Matrix</h3>
+              <p class="media-card-author">Hermanas Wachowski (1999)</p>
+              <span class="media-card-badge">Ver en IMDb ↗</span>
+            </div>
+          </a>
+
+        </div>
+      </article>
+
+      <!-- Discos Favoritos en Cards (Mínimo 3) -->
+      <article class="card-box">
+        <h2>Discos Favoritos</h2>
+        <div class="media-grid">
+          
+          <!-- Disco 1 -->
+          <a href="https://open.spotify.com/album/2WT1pbYjLJciNw274Zqda5" target="_blank" rel="noopener noreferrer" class="media-card" aria-label="Escuchar The Dark Side of the Moon en Spotify">
+            <div class="media-card-img-wrapper">
+              <img src="img/dark-side.jpg" alt="Portada The Dark Side of the Moon" class="media-card-img" />
+            </div>
+            <div class="media-card-body">
+              <h3 class="media-card-title">The Dark Side of the Moon</h3>
+              <p class="media-card-author">Pink Floyd (1973)</p>
+              <span class="media-card-badge">Escuchar en Spotify ↗</span>
+            </div>
+          </a>
+
+          <!-- Disco 2 -->
+          <a href="https://open.spotify.com/album/3A13v0E51O8G5sXb5hBwOQ" target="_blank" rel="noopener noreferrer" class="media-card" aria-label="Escuchar Bocanada en Spotify">
+            <div class="media-card-img-wrapper">
+              <img src="img/bocanada.jpg" alt="Portada Bocanada" class="media-card-img" />
+            </div>
+            <div class="media-card-body">
+              <h3 class="media-card-title">Bocanada</h3>
+              <p class="media-card-author">Gustavo Cerati (1999)</p>
+              <span class="media-card-badge">Escuchar en Spotify ↗</span>
+            </div>
+          </a>
+
+          <!-- Disco 3 -->
+          <a href="https://open.spotify.com/album/0ETFjACtuP2ADo6LFhL6HN" target="_blank" rel="noopener noreferrer" class="media-card" aria-label="Escuchar Abbey Road en Spotify">
+            <div class="media-card-img-wrapper">
+              <img src="img/abbey-road.jpg" alt="Portada Abbey Road" class="media-card-img" />
+            </div>
+            <div class="media-card-body">
+              <h3 class="media-card-title">Abbey Road</h3>
+              <p class="media-card-author">The Beatles (1969)</p>
+              <span class="media-card-badge">Escuchar en Spotify ↗</span>
+            </div>
+          </a>
+
+        </div>
+      </article>
+      
+      <!-- Botones de Navegación Interna -->
+      <nav class="profile-pagination" aria-label="Navegación entre perfiles">
+        <a href="perfil-judith.html" class="btn-nav pagination-btn">← Anterior (Judith)</a>
+        <a href="perfil-silvia.html" class="btn-nav pagination-btn btn-primary">Siguiente (Silvia) →</a>
+      </nav>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© 2026 DevStudio · Perfil Individual</p>
+    </div>
+  </footer>
+
+  <script src="js/perfil.js"></script>
 </body>
 </html>

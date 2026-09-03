@@ -1,12 +1,78 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bitácora</title>
-    <link rel="stylesheet" href="./css/style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bitácora de Desarrollo · DevStudio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
-    
+  <header class="site-header">
+      <div class="container header-nav">
+        <a href="index.html#inicio" class="brand-link" aria-label="Página principal de DevStudio">
+          <img src="img/logo-devstudio.svg" alt="Logo de DevStudio" class="brand-logo" width="36" height="36" />
+          <span class="brand-title">DevStudio</span>
+        </a>
+        <nav aria-label="Navegación principal">
+          <ul class="nav-links">
+            <li><a href="index.html#inicio">Inicio</a></li>
+            <li><a href="index.html#equipo">Equipo</a></li>
+            <li><a href="index.html#contacto">Contacto</a></li>
+            <li><a href="bitacora.html" class="active">Bitácora</a></li>
+            <li>
+              <button class="theme-toggle-btn" id="theme-toggle" aria-label="Cambiar modo claro u oscuro">🌙</button>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+  <main class="container bitacora-container">
+    <h1 class="bitacora-title">Bitácora de Desarrollo</h1>
+    <p class="bitacora-subtitle">Registro grupal de toma de decisiones, desafíos técnicos y soluciones implementadas en el TP1.</p>
+
+    <!-- Hito 1 -->
+    <article class="card-box bitacora-entry">
+      <h2>1. Arquitectura, Estructura y Sistema de Diseño</h2>
+      <p>
+        Acordamos una arquitectura de carpetas limpia y modular (`css/`, `js/`, `img/` y los `.html` en la raíz). Definimos una guía de diseño consistente mediante custom properties en CSS (`:root`), utilizando las familias tipográficas <strong>Space Grotesk</strong> para títulos y <strong>IBM Plex Sans</strong> para texto general.
+      </p>
+    </article>
+
+    <!-- Hito 2 -->
+    <article class="card-box bitacora-entry">
+      <h2>2. Navegación Fluida sin Botón Atrás</h2>
+      <p>
+        Para cumplir con la consigna de accesibilidad, diseñamos un flujo de navegación circular: desde la portada se accede a cada perfil, y cada perfil cuenta con botones para volver a la portada, regresar al perfil anterior o avanzar al siguiente integrante.
+      </p>
+    </article>
+
+    <!-- Hito 3 -->
+    <article class="card-box bitacora-entry">
+      <h2>3. Desafíos Responsivos en los 3 Breakpoints (400px, 900px, 1200px)</h2>
+      <p>
+        <strong>Dificultad:</strong> En pantallas de smartphones (menores a 400px), el layout de 2 columnas de los perfiles y el menú horizontal producían desbordes laterales.<br>
+        <strong>Solución:</strong> Aplicamos CSS Grid fluido con `grid-template-columns: 1fr` en el breakpoint de 900px y adaptamos la barra de navegación con `flex-direction: column` para 400px.
+      </p>
+    </article>
+
+    <!-- Hito 4 -->
+    <article class="card-box bitacora-entry">
+      <h2>4. Lógica JavaScript Centralizada y Escalable</h2>
+      <p>
+        Implementamos un único script (`js/perfil.js`) para todas las páginas individuales utilizando selectores basados en atributos personalizados (`data-member`). Esto garantiza cero duplicación de código, evita errores en la consola y otorga a cada integrante una interacción dinámica única.
+      </p>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© 2026 DevStudio · Bitácora de Desarrollo</p>
+    </div>
+  </footer>
+  <script src="js/main.js"></script>
 </body>
 </html>
