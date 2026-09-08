@@ -7,14 +7,14 @@ function initThemeToggle() {
 
   // Aplica el tema guardado al cargar
   document.documentElement.setAttribute("data-theme", savedTheme);
-  
+
   if (themeBtn) {
     themeBtn.textContent = savedTheme === "dark" ? "☀️" : "🌙";
-    
+
     themeBtn.addEventListener("click", () => {
       const currentTheme = document.documentElement.getAttribute("data-theme");
       const newTheme = currentTheme === "dark" ? "light" : "dark";
-      
+
       document.documentElement.setAttribute("data-theme", newTheme);
       localStorage.setItem("devstudio-theme", newTheme);
       themeBtn.textContent = newTheme === "dark" ? "☀️" : "🌙";
@@ -43,7 +43,7 @@ document.addEventListener("DOMContentLoaded", () => {
           output.textContent = "xxx.";
           break;
         case "judith":
-          output.textContent = "xx";
+          output.textContent = "-Si la vida te da la espalda, ponle position: absolute y que se arregle sola.-";
           break;
         case "magali":
           output.textContent = "xx";
