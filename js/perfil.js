@@ -40,7 +40,7 @@ document.addEventListener("DOMContentLoaded", () => {
           output.textContent = `xxx`;
           break;
         case "elias":
-          output.textContent = "xxx.";
+          output.textContent = "Un buen código no es el que hace magia; es el que no necesita trucos para que otros lo entiendan.";
           break;
         case "judith":
           output.textContent = "-Si la vida te da la espalda, ponle position: absolute y que se arregle sola.-";
