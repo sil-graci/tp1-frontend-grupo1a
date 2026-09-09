@@ -46,7 +46,7 @@ document.addEventListener("DOMContentLoaded", () => {
           output.textContent = "-Si la vida te da la espalda, ponle position: absolute y que se arregle sola.-";
           break;
         case "magali":
-          output.textContent = "xx";
+          output.textContent = "Subir una montaña es una forma de sentirse en la cima del mundo y, al mismo tiempo, aprender a mirar las cosas con calma.";
           break;
         case "silvia":
           output.textContent = "xx";
