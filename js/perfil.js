@@ -49,7 +49,7 @@ document.addEventListener("DOMContentLoaded", () => {
           output.textContent = "Subir una montaña es una forma de sentirse en la cima del mundo y, al mismo tiempo, aprender a mirar las cosas con calma.";
           break;
         case "silvia":
-          output.textContent = "xx";
+          output.textContent = "La vida es como el código: a veces no funciona a la primera, pero siempre se puede intentar de nuevo.";
           break;
         default:
           output.textContent = "xx.";
