@@ -37,7 +37,7 @@ document.addEventListener("DOMContentLoaded", () => {
     actionBtn.addEventListener("click", () => {
       switch (member) {
         case "adriana":
-          output.textContent = `xxx`;
+          output.textContent = "Lo que diseñamos no nos pertenece: nace con nosotros pero crece cuando lo dejamos avanzar.";
           break;
         case "elias":
           output.textContent = "Un buen código no es el que hace magia; es el que no necesita trucos para que otros lo entiendan.";
