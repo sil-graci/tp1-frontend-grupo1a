@@ -7,8 +7,7 @@ Trabajo Práctico Grupal 1 de la materia **Desarrollo de Sistemas Web (Front End
 ## 🔗 Enlaces del Proyecto
 
 * **URL publicada (Vercel):** https://tp1-frontend-grupo1a.vercel.app/
-* **Repositorio público en GitHub:** `https://github.com/sil-graci/tp1-frontend-grupo1a` *(reemplazar con el enlace grupal definitivo)*
-
+* **Repositorio público en GitHub:** https://github.com/sil-graci/tp1-frontend-grupo1a
 
 ---
 
@@ -16,11 +15,12 @@ Trabajo Práctico Grupal 1 de la materia **Desarrollo de Sistemas Web (Front End
 
 | Nombre y Apellido | Rol / Especialidad | Perfil de GitHub |
 | --- | --- | --- |
-| **Adriana Meyniel** | Analista Funcional & FrontEnd | [@Adrilu-web](https://www.google.com/search?q=https://github.com/Adrilu-web) |
-| **Elías** | Maquetación & Lógica FrontEnd | `[@usuario-elias]` |
-| **Judith** | Maquetación & Responsive | `[@usuario-judith]` |
-| **Magalí** | Estilos CSS & Animaciones | `[@usuario-magali]` |
-| **Silvia** | Desarrollo Web & Lógica JS | `[@usuario-silvia]` |
+| **Adriana Meyniel** | Analista Funcional & FrontEnd | [@Adrilu-web] (https://github.com/Adrilu-web) |
+| **Elías** | Maquetación & Lógica FrontEnd | [@ZagaynyElias] (https://github.com/ZagaynyElias)|
+| **Judith** | Maquetación & Responsive | [@judith91] (https://github.com/judith91)|
+| **Magalí** | Estilos CSS & Animaciones | [@pintosmagali] (https://github.com/pintosmagali) |
+| **Silvia** | Desarrollo Web & Lógica JS | [@sil-graci] (https://github.com/sil-graci) |
+
 
 ---
 
@@ -123,11 +123,15 @@ La portada incorpora un módulo de contacto estructurado en dos columnas (`.cont
 * **Función:** Generador dinámico de datos y fortalezas del equipo.
 * **Técnica:** Escucha el evento `click` sobre `#btn-team-fact` y obtiene un dato aleatorio de un array mediante `Math.random()`, actualizando el elemento `#team-fact-output` en tiempo real.
 
+
+![Demostración interacción en portada](img/interaccion-portada.png)
+
 ### 3. Perfiles Individuales (`js/perfil.js`)
 
 * **Arquitectura:** Se implementó un único script universal para todos los perfiles (`perfil-*.html`) utilizando el atributo `data-member`.
 
 
+![Demostración interacción en perfiles](img/interaccion-perfil.png)
 ---
 
 ## 🧭 Navegación y Usabilidad
@@ -166,6 +170,9 @@ La portada incorpora un módulo de contacto estructurado en dos columnas (`.cont
 
 * **Criterio de prompts y privacidad:**
 * Se priorizaron prompts enfocados en código semántico nativo, accesibilidad (ARIA) y rendimiento sin frameworks pesados. Las imágenes de películas y discos fueron enlazadas con textos alternativos (`alt`) claros.
+
+* **Prompt inicial de arquitectura y arranque del proyecto:**
+  > *"Actúa como un desarrollador Front End experto y docente universitario. Necesitamos desarrollar un proyecto web grupal en HTML5 semántico, CSS  y JavaScript para la cátedra de Desarrollo de sistemas Web Front End. Requisitos obligatorios: estructura modular en carpetas (`css/`, `js/`, `img/`), sistema de temas claro/oscuro, diseño responsive adaptado a breakpoints de 400px, 900px y 1200px sin frameworks, portada con Hero y grilla de integrantes, páginas de perfil individual con cards multimedia y navegación interna sin depender del botón Atrás del navegador. Que sea accesible y escalable. Debe seguir los lineamientos de la consigna que te adjuntamos y cumplir con la rúbrica de evaluación "*
 
 
 * **Qué revisó y adaptó el equipo con criterio propio:**

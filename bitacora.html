@@ -32,38 +32,69 @@
 
   <main class="container bitacora-container">
     <h1 class="bitacora-title">Bitácora de Desarrollo</h1>
-    <p class="bitacora-subtitle">Registro grupal de toma de decisiones, desafíos técnicos y soluciones implementadas en el TP1.</p>
+    <p class="bitacora-subtitle">Registro del trabajo grupal: decisiones de diseño, problemas que fueron surgiendo y cómo los solucionamos en equipo para el TP1.</p>
 
     <!-- Hito 1 -->
     <article class="card-box bitacora-entry">
-      <h2>1. Arquitectura, Estructura y Sistema de Diseño</h2>
+      <h2>1. Organización de archivos y diseño visual</h2>
       <p>
-        Acordamos una arquitectura de carpetas limpia y modular (`css/`, `js/`, `img/` y los `.html` en la raíz). Definimos una guía de diseño consistente mediante custom properties en CSS (`:root`), utilizando las familias tipográficas <strong>Space Grotesk</strong> para títulos y <strong>IBM Plex Sans</strong> para texto general.
+        <strong>Decisión:</strong> Separamos los archivos según lo pedido: el <code>index.html</code> y los perfiles en la carpeta raíz, los estilos en <code>css/</code>, los scripts en <code>js/</code> y las fotos en <code>img/</code>. Para mantener la coherencia visual en todas las páginas, definimos variables de CSS (en <code>:root</code> y <code>[data-theme="dark"]</code>) con los colores principales, fuentes (<em>Space Grotesk</em> e <em>IBM Plex Sans</em>) y tamaños.
+      </p>
+      <p>
+        <strong>Dificultad:</strong> Al cambiar entre modo claro y modo oscuro, varias tarjetas perdían contraste o los textos no se leían bien sobre el fondo.
+      </p>
+      <p>
+        <strong>Solución:</strong> Vinculamos los fondos, bordes y textos a las variables CSS correspondientes. De esa forma, al alternar el botón de tema, toda la página se actualiza de manera uniforme y guarda la preferencia del usuario en <code>localStorage</code>.
       </p>
     </article>
 
     <!-- Hito 2 -->
     <article class="card-box bitacora-entry">
-      <h2>2. Navegación Fluida sin Botón Atrás</h2>
+      <h2>2. Navegación fluida y enlaces internos</h2>
       <p>
-        Para cumplir con la consigna de accesibilidad, diseñamos un flujo de navegación circular: desde la portada se accede a cada perfil, y cada perfil cuenta con botones para volver a la portada, regresar al perfil anterior o avanzar al siguiente integrante.
+        <strong>Decisión:</strong> Cumplimos con la consigna de no obligar a usar el botón "Atrás" del navegador. En cada perfil pusimos enlaces para volver a la portada, regresar al perfil anterior o pasar al siguiente.
+      </p>
+      <p>
+        <strong>Dificultad:</strong> Como la barra de navegación superior es fija (<code>position: sticky</code>), al hacer clic en los enlaces del menú (como "Equipo" o "Contacto"), la barra tapaba el título de la sección donde aterrizaba la pantalla.
+      </p>
+      <p>
+        <strong>Solución:</strong> Agregamos la propiedad <code>scroll-margin-top: 90px</code> en las secciones. Así, el navegador deja el espacio justo para que la cabecera fija no tape ningún título.
       </p>
     </article>
 
     <!-- Hito 3 -->
     <article class="card-box bitacora-entry">
-      <h2>3. Desafíos Responsivos en los 3 Breakpoints (400px, 900px, 1200px)</h2>
+      <h2>3. Diseño adaptable en los tres breakpoints (400px, 900px y 1200px)</h2>
       <p>
-        <strong>Dificultad:</strong> En pantallas de smartphones (menores a 400px), el layout de 2 columnas de los perfiles y el menú horizontal producían desbordes laterales.<br>
-        <strong>Solución:</strong> Aplicamos CSS Grid fluido con `grid-template-columns: 1fr` en el breakpoint de 900px y adaptamos la barra de navegación con `flex-direction: column` para 400px.
+        <strong>Dificultad:</strong> Al probar el sitio en pantallas de celulares chicos (400px), los enlaces del menú se salían de la pantalla y el formulario de contacto con el mapa generaban scroll horizontal.
+      </p>
+      <p>
+        <strong>Solución:</strong> Usamos CSS Grid y Flexbox con media queries. En 900px hicimos que el formulario y el mapa se ubiquen uno abajo del otro (1 columna). En 400px hicimos que el menú se ordene de forma vertical y permita que los botones se acomoden sin desbordar el ancho de pantalla.
       </p>
     </article>
 
     <!-- Hito 4 -->
     <article class="card-box bitacora-entry">
-      <h2>4. Lógica JavaScript Centralizada y Escalable</h2>
+      <h2>4. Ajuste de la imagen del encabezado (Hero)</h2>
       <p>
-        Implementamos un único script (`js/perfil.js`) para todas las páginas individuales utilizando selectores basados en atributos personalizados (`data-member`). Esto garantiza cero duplicación de código, evita errores en la consola y otorga a cada integrante una interacción dinámica única.
+        <strong>Dificultad:</strong> La imagen elegida para la portada (<code>hero-bg.png</code>) tiene tonos oscuros y líneas de circuitos brillantes. En modo oscuro se veía perfecta, pero en modo claro oscurecía demasiado la portada y no combinaba con el fondo claro de la página.
+      </p>
+      <p>
+        <strong>Solución:</strong> En modo claro le aplicamos un degradado suave por encima con CSS (usando <code>linear-gradient</code>). Esto permitió aclarar el fondo general para que se sienta como una tarjeta integrada al modo claro, sin tapar ni perder el brillo de las líneas tecnológicas.
+      </p>
+    </article>
+
+    <!-- Hito 5 -->
+    <article class="card-box bitacora-entry">
+      <h2>5. Interactividad con JavaScript y formulario de contacto</h2>
+      <p>
+        <strong>Decisión en JavaScript:</strong> Para no copiar y pegar cinco veces el mismo código en cada página de perfil, armamos un solo archivo <code>perfil.js</code>. Usamos el atributo <code>data-member</code> en el botón de cada HTML para que el script reconozca a qué integrante pertenece y muestre su frase correspondiente al hacer clic.
+      </p>
+      <p>
+        <strong>Dificultad en Contacto:</strong> Al probar el formulario con Live Server, al presionar "Enviar mensaje" el navegador intentaba enviar los datos a un servidor que no existe y mostraba un error de página caída.
+      </p>
+      <p>
+        <strong>Solución:</strong> Configuramos el formulario con <code>action="mailto:..."</code> y <code>enctype="text/plain"</code>. De este modo, no depende de un backend y abre directamente la aplicación de correo del usuario con el mensaje preparado para enviar.
       </p>
     </article>
   </main>
