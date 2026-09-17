@@ -6,8 +6,7 @@ Trabajo Práctico Grupal 1 de la materia **Desarrollo de Sistemas Web (Front End
 
 ## 🔗 Enlaces del Proyecto
 
-* **URL publicada (Vercel):** `[https://devstudio-tp1.vercel.app/](https://devstudio-tp1.vercel.app/)` *(reemplazar con el enlace final de Vercel)*
-
+* **URL publicada (Vercel):** https://tp1-frontend-grupo1a.vercel.app/
 * **Repositorio público en GitHub:** `https://github.com/sil-graci/tp1-frontend-grupo1a` *(reemplazar con el enlace grupal definitivo)*
 
 
